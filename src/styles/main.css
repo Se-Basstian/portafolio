@@ -51,7 +51,7 @@
   list-style-type: none;
 
   & a {
-    background-image: url("/public/img/main/mis_datos/Vector.png");
+    background-image: url("/src/imgs/mis_datos/Vector.png");
     background-repeat: no-repeat;
     background-position: center right;
     text-decoration: none;
