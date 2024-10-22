@@ -1,0 +1,171 @@
+---
+import BaseLayout from "@src/layouts/BaseLayout.astro";
+import Menu from "@src/components/Menu.astro";
+import CardSkill from "@src/components/CardSkill.astro";
+import "@src/styles/header.css"
+import "@src/styles/main.css"
+import "@src/styles/skills.css"
+---
+
+<BaseLayout
+    tituloPagina="Principal"
+>
+    <header>
+    <nav class:list={["menu", "centrar"]}>
+        <button class="menu__boton">Contáctame</button>
+
+        <Menu
+            opciones={[
+              {texto: "Sobre mi", ulr: "#"},
+              {texto: "Skills", ulr: "#"},
+              {texto: "Hobbies", ulr: "#"},
+              {texto: "Formación", ulr: "#"},
+              {texto: "Proyectos", ulr: "#"}
+            ]}
+        />
+
+        <img
+            class="menu__lista"
+            src="../../public/img/header/lista.png"
+            alt="menú hamburgesa"
+        />
+    </nav>
+    </header>
+
+    <main>
+        <article class:list={["mis-datos"]}>
+            <section class:list={["mis-datos__general", "centrar"]}>
+                <h2 class="mis-datos__titulo">
+                Hola, me llamo Sebastian y construyo páginas web
+                </h2>
+                <p class="mis-datos__texto">
+                Me formé en SENATI (Servio Nacional de Adiestramiento en
+                Trabajo Indutrial) en la carrera técnica de Soporte y
+                Mantenimeinto de Equipos de Computación y actualmente
+                estoy participando del proyecto Oracle ONE en Alura
+                Latam para empezar mi carrer como un desarrollador
+                Front-End
+                </p>
+                <ul class="mis-redes">
+                    <li class="mis-redes__item">
+                        <a href="#">Github</a>
+                    </li>
+                    <li class="mis-redes__item">
+                        <a href="#">Linkedin</a>
+                    </li>
+                    <li class="mis-redes__item">
+                        <a href="#">Instagran</a>
+                        </li>
+                    <li class="mis-redes__item">
+                        <a href="#">Curriculun</a>
+                        </li>
+                </ul>
+                <img
+                    class="mis-datos__imagen"
+                    src="../../../public/img/main/mis_datos/perfil.png"
+                    alt="Mi perfil"
+                />
+            </section>
+
+            <section class:list={["mis-datos__sobre-mi"]}>
+                <h3 class:list={["mis-datos__sobre-mi__titulo", "centrar"]}>
+                    Sobre mi
+                </h3>
+                <p class:list={["mis-datos__sobre-mi__texto", "centrar"]}>
+                    Soy una persona apasionda por la tecnología y curiosa
+                    por entender su funcionamiento. Es por ello que siempre
+                    busco conocimientos en cursos, redes o libros; lo que me
+                    llevó a comprender aspectos básicos de diversos
+                    lenguajes de programación como python, C++, javascript,
+                    TapyScript; funcionamiento de las redes del internet, el
+                    cableado estructurador de redes LAN y el uso de
+                    electronica básica para proyectos con Arduino.
+                </p>
+                <p class:list={["mis-datos__sobre-mi__texto", "centrar"]}>
+                    Esa curiosidad por el mundo de las tecnologías de la
+                    información me llevó a estudiar en SENATI un centro de
+                    educación superior técnica de Perú, en la carrera de
+                    Soporte y Mantenimiento de equipos de computación.
+                    Durante esa parte de mi vida tuve la suerte de ser
+                    admitido para participar en el proyecto de Oracle One en
+                    Alura Latam; en el cual me encuentro actualmente para
+                    desarrollarme como un programador Fornt-End.
+                </p>
+            </section>
+        </article>
+
+        <article class:list={["skills"]}>
+            <h2 class:list={["skills__titulo", "centrar"]}>Skills</h2>
+            <section class:list={["skills__cards", "centrar"]}>
+                <CardSkill
+                    titulo="HTML"
+                    texto={`
+                    HTML (HyperText Markup Language) es el lenguaje de
+                    marcado estándar utilizado para crear y estructurar el
+                    contenido en la web. Define la estructura básica de una
+                    página web mediante el uso de etiquetas, que representan
+                    diferentes tipos de contenido como texto, imágenes,
+                    enlaces, formularios, tablas, y otros elementos
+                    multimedia.
+                    `}
+                    imagen={{
+                      src: "../../public/img/main/skills/Logo_html.svg",
+                      alt: "Logo de html"
+                    }}
+                />
+
+                <CardSkill
+                    titulo="CSS"
+                    texto={`
+                    CSS (Cascading Style Sheets) es un lenguaje de diseño
+                    utilizado para describir la presentación visual de una
+                    página web. Se encarga de definir cómo los elementos
+                    HTML se muestran en la pantalla o en otros medios.
+                    `}
+                    imagen={{
+                      src: "../../public/img/main/skills/Logo_css.svg",
+                      alt: "Logo de css"
+                    }}
+                />
+
+                <CardSkill
+                    titulo="JavaScript"
+                    texto={`
+                    JavaScript es un lenguaje de programación dinámico y
+                    versátil que se utiliza principalmente para desarrollar
+                    aplicaciones web interactivas. Junto con HTML y CSS, es
+                    uno de los pilares fundamentales del desarrollo web.
+                    JavaScript permite añadir interactividad a las páginas,
+                    como manejar eventos (clics, desplazamiento, etc.),
+                    actualizar contenido en tiempo real, validar
+                    formularios, y mucho más.
+                    `}
+                    imagen={{
+                      src: "../../public/img/main/skills/Logo_js.svg",
+                      alt: "Logo de javascript"
+                    }}
+                />
+
+                <CardSkill
+                    titulo="TypeScript"
+                    texto={`
+                    TypeScript es un lenguaje de programación basado en
+                    JavaScript que añade tipado estático y características
+                    avanzadas para mejorar el desarrollo de aplicaciones a
+                    gran escala. Fue desarrollado por Microsoft y es un
+                    superset de JavaScript, lo que significa que todo código
+                    JavaScript es también un código válido de TypeScript,
+                    pero con la opción de añadir tipos explícitos y otras
+                    herramientas útiles para el desarrollo.
+                    `}
+                    imagen={{
+                      src: "../../public/img/main/skills/Logo_ts.svg",
+                      alt: "Logo de typescript"
+                    }}
+                />
+
+            </section>
+        </article>
+
+    </main>
+</BaseLayout>

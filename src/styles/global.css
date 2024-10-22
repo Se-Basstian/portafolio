@@ -1,0 +1,33 @@
+:root {
+  font-size: 10px;
+  font-family: "Noto Sans", sans-serif;
+}
+
+body {
+  writing-mode: horizontal-tb;
+  font-size: 1.6rem;
+  margin: 0;
+  background-color: black;
+}
+
+h2 {
+  font-size: 3.2rem;
+
+  @media (width <= 768px) {
+    font-size: 2.2rem;
+  }
+}
+
+.centrar {
+  max-inline-size: 1136px;
+  padding-inline: 32px;
+  margin-inline: auto;
+
+  @media (width <= 768px) {
+    max-inline-size: 704px;
+  }
+
+  @media (width <= 360px) {
+    padding-inline: 16px;
+  }
+}
