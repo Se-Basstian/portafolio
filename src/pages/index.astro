@@ -2,6 +2,9 @@
 import BaseLayout from "@src/layouts/BaseLayout.astro";
 import Menu from "@src/components/Menu.astro";
 import CardSkill from "@src/components/CardSkill.astro";
+
+import fotoPerfil from "@imgs/mis_datos/perfil.png";
+
 import "@src/styles/header.css"
 import "@src/styles/main.css"
 import "@src/styles/skills.css"
@@ -62,7 +65,7 @@ import "@src/styles/skills.css"
                 </ul>
                 <img
                     class="mis-datos__imagen"
-                    src="../../../public/img/main/mis_datos/perfil.png"
+                    src={fotoPerfil.src}
                     alt="Mi perfil"
                 />
             </section>
