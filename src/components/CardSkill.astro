@@ -5,112 +5,53 @@ interface Img {
 }
 interface Props {
     titulo: string;
-    texto: string;
     imagen: Img
 }
 
-const {titulo, texto, imagen} = Astro.props;
+const {titulo, imagen} = Astro.props;
 ---
-
-<div>
-    <img src={imagen.src} alt={imagen.alt}>
-    <h3>{titulo}</h3>
-    <p>{texto}</p>
+<div class:list={["card-skill"]}>
+    <h3 class:list={["card-skill__titulo"]}>{titulo}</h3>
+    <img class:list={["card-skill__img"]} src={imagen.src} alt={imagen.alt}>
 </div>
 
+<script>
+  const titulos = document.querySelectorAll(
+    ".card-skill__titulo",
+  ) as NodeListOf<HTMLHeadElement>;
+
+  Array.from(titulos).map(titulo => {
+    const textoTitulo = titulo.textContent as string;
+
+    if (textoTitulo.length >= 5) {
+      // titulo.classList.add(".card-skill__titulo--fuente-media")
+      titulo.style.fontSize = "2.5rem"
+    }
+  });
+
+</script>
+
+
 <style>
-div {
-  background-color: white;
-  inline-size: 260px;
-  block-size: 320px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 15px;
-  transition: transform 0.25s linear;
-  box-shadow:
-    0 1px 3px,
-    0 -1px 3px;
-}
+    .card-skill {
+        --ancho-card: 250px;
 
-div:hover {
-  block-size: fit-content;
-  padding-block: 10px;
-  transform: scale(1.1);
-  & img {
-    display: none;
-  }
-
-  & p {
-    display: block;
-  }
-}
-
-h3 {
-  inline-size: 95%;
-  margin-inline: auto;
-  font-size: 2.4rem;
-  text-align: center;
-
-  @media (width <= 768px) {
-    font-size: 2.3rem;
-  }
-}
-
-p {
-  inline-size: 95%;
-  margin-inline: auto;
-  display: none;
-
-  @media (width <= 360px) {
-    font-size: 1.4rem;
-  }
-}
-
-img {
-  max-inline-size: 90%;
-}
-
-@media (width <= 768px) {
-  div {
-    flex-direction: row;
-    flex-wrap: wrap;
-    overflow-y: scroll;
-  }
-
-  div:hover {
-    flex-direction: row;
-    flex-wrap: wrap;
-    overflow-y: scroll;
-
-    img {
-      inline-size: 35%;
+        /* background-color: white; */
+        background-image: linear-gradient(45deg,white, #2a7ae4);
+        border-radius: 15px;
+        inline-size: var(--ancho-card);
+        aspect-ratio: 2 / 1;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
     }
 
-    h3 {
-      inline-size: 65%;
+    .card-skill__titulo {
+        font-size: 3.2rem;
     }
 
-    p {
-      display: block;
+    .card-skill__img {
+        inline-size: calc(0.4 * var(--ancho-card));
     }
-  }
 
-  ::slotted(img) {
-    inline-size: 35%;
-  }
-
-  h3 {
-    inline-size: 65%;
-  }
-
-  p {
-    display: block;
-  }
-}
-
-@media (width <= 360px) {
-  div:hover {
-  }
-}
 </style>

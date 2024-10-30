@@ -2,12 +2,19 @@
 import BaseLayout from "@src/layouts/BaseLayout.astro";
 import Menu from "@src/components/Menu.astro";
 import CardSkill from "@src/components/CardSkill.astro";
+import CardHobbie from "@src/components/CardHobbie.astro";
 
 import perfil from "../assets/mis_datos/perfil.png";
+import logoHtml from "../assets/skills/Logo_html.svg";
+import logoCss from "../assets/skills/Logo_css.svg";
+import logoJs from "../assets/skills/Logo_js.svg";
+import logoTs from "../assets/skills/Logo_ts.svg";
+import orquesta from "../assets/hobbies/orquesta1.jpeg";
 
 import "@src/styles/header.css"
 import "@src/styles/main.css"
 import "@src/styles/skills.css"
+import "@src/styles/hobbies.css"
 ---
 
 <BaseLayout
@@ -102,71 +109,60 @@ import "@src/styles/skills.css"
             <section class:list={["skills__cards", "centrar"]}>
                 <CardSkill
                     titulo="HTML"
-                    texto={`
-                    HTML (HyperText Markup Language) es el lenguaje de
-                    marcado estándar utilizado para crear y estructurar el
-                    contenido en la web. Define la estructura básica de una
-                    página web mediante el uso de etiquetas, que representan
-                    diferentes tipos de contenido como texto, imágenes,
-                    enlaces, formularios, tablas, y otros elementos
-                    multimedia.
-                    `}
                     imagen={{
-                      src: "../../public/img/main/skills/Logo_html.svg",
+                      src: logoHtml.src,
                       alt: "Logo de html"
                     }}
                 />
 
                 <CardSkill
                     titulo="CSS"
-                    texto={`
-                    CSS (Cascading Style Sheets) es un lenguaje de diseño
-                    utilizado para describir la presentación visual de una
-                    página web. Se encarga de definir cómo los elementos
-                    HTML se muestran en la pantalla o en otros medios.
-                    `}
                     imagen={{
-                      src: "../../public/img/main/skills/Logo_css.svg",
+                      src: logoCss.src,
                       alt: "Logo de css"
                     }}
                 />
 
                 <CardSkill
                     titulo="JavaScript"
-                    texto={`
-                    JavaScript es un lenguaje de programación dinámico y
-                    versátil que se utiliza principalmente para desarrollar
-                    aplicaciones web interactivas. Junto con HTML y CSS, es
-                    uno de los pilares fundamentales del desarrollo web.
-                    JavaScript permite añadir interactividad a las páginas,
-                    como manejar eventos (clics, desplazamiento, etc.),
-                    actualizar contenido en tiempo real, validar
-                    formularios, y mucho más.
-                    `}
                     imagen={{
-                      src: "../../public/img/main/skills/Logo_js.svg",
+                      src: logoJs.src,
                       alt: "Logo de javascript"
                     }}
                 />
 
                 <CardSkill
                     titulo="TypeScript"
-                    texto={`
-                    TypeScript es un lenguaje de programación basado en
-                    JavaScript que añade tipado estático y características
-                    avanzadas para mejorar el desarrollo de aplicaciones a
-                    gran escala. Fue desarrollado por Microsoft y es un
-                    superset de JavaScript, lo que significa que todo código
-                    JavaScript es también un código válido de TypeScript,
-                    pero con la opción de añadir tipos explícitos y otras
-                    herramientas útiles para el desarrollo.
-                    `}
                     imagen={{
-                      src: "../../public/img/main/skills/Logo_ts.svg",
+                      src: logoTs.src,
                       alt: "Logo de typescript"
                     }}
                 />
+            </section>
+        </article>
 
+        <article class:list={["hobbies"]}>
+            <h2 class:list={["hobbies__titulo", "centrar"]}>Hobbies</h2>
+            <section class:list={["hobbies__cards", "centrar"]}>
+                <CardHobbie
+                    titulo="Música"
+                    texto={`
+                    Soy un apasionado de la música y tengo la suerte de
+                    formar parte de una pequeña orquesta en Chancay. Mi
+                    instrumento principal es el contrabajo, aunque también
+                    disfruto tocando la guitarra. Gracias a la orquesta de
+                    Chancay he podido desarrollar mis habilidades y explorar
+                    diferentes géneros musicales. El contrabajo me brinda la
+                    oportunidad de crear una base sólida para la música,
+                    mientras que la guitarra me permite expresar mi lado más
+                    melódico. Disfruto del desafío de aprender nuevas piezas
+                    y de la satisfacción de dominar un instrumento.
+                    `}
+                    img={{
+                      src: orquesta.src,
+                      alt: "Portada de la película Akira"
+                    }}
+                />
             </section>
         </article>
 
