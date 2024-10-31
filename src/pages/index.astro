@@ -4,6 +4,7 @@ import Menu from "@src/components/Menu.astro";
 import CardSkill from "@src/components/CardSkill.astro";
 import CardHobbie from "@src/components/CardHobbie.astro";
 
+import botonLista from "../assets/header/lista.png";
 import perfil from "../assets/mis_datos/perfil.png";
 import logoHtml from "../assets/skills/Logo_html.svg";
 import logoCss from "../assets/skills/Logo_css.svg";
@@ -36,7 +37,7 @@ import "@src/styles/hobbies.css"
 
         <img
             class="menu__lista"
-            src="../../public/img/header/lista.png"
+            src={botonLista.src}
             alt="menú hamburgesa"
         />
     </nav>
