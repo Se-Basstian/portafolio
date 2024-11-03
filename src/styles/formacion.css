@@ -1,0 +1,5 @@
+.formacion__titulo {
+  inline-size: fit-content;
+  margin-inline: auto;
+  color: white;
+}

@@ -47,6 +47,7 @@ const {titulo, texto, img} = Astro.props;
 
     .card-hobbie__img {
         inline-size: 44%;
+        max-block-size: 250px;
 
         @media (width <= 768px) {
         float: left;
@@ -60,9 +61,10 @@ const {titulo, texto, img} = Astro.props;
     }
 
     .card-hobbie__texto {
-        inline-size: 60%;
+        inline-size: 56%;
         margin-block-start: 81px;
         line-height: 1.8;
+        padding-inline-start: 10px;
 
         @media (width <= 768px) {
         inline-size: auto;

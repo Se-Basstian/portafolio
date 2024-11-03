@@ -11,11 +11,13 @@ import logoCss from "../assets/skills/Logo_css.svg";
 import logoJs from "../assets/skills/Logo_js.svg";
 import logoTs from "../assets/skills/Logo_ts.svg";
 import orquesta from "../assets/hobbies/orquesta1.jpeg";
+import posterAkira from "../assets/hobbies/Akira.jpg";
 
 import "@src/styles/header.css"
 import "@src/styles/main.css"
 import "@src/styles/skills.css"
 import "@src/styles/hobbies.css"
+import "@src/styles/formacion.css"
 ---
 
 <BaseLayout
@@ -161,9 +163,30 @@ import "@src/styles/hobbies.css"
                     `}
                     img={{
                       src: orquesta.src,
-                      alt: "Portada de la película Akira"
+                      alt: "Imagen de la orquesta de chancay"
                     }}
                 />
+                <CardHobbie
+                    titulo="Pelis y Series"
+                    texto={`Soy un apasionado del entretenimiento audiovisual. Me
+                    encanta sumergirme en historias de ciencia ficción y
+                    misterio, ya sea en series, películas o anime. Disfruto
+                    de tramas intrigantes, personajes complejos y mundos
+                    imaginarios que me transportan a otras realidades. Desde
+                    los clásicos del cine hasta las últimas novedades en
+                    streaming, siempre estoy buscando nuevas historias que
+                    me sorprendan y emocionen.`}
+                    img={{
+                      src: posterAkira.src,
+                      alt: "Cartel de la película Akira."
+                    }}
+                />
+            </section>
+        </article>
+
+        <article class:list={["formacion"]}>
+            <h2 class:list={["formacion__titulo", "centrar"]}>Formación</h2>
+            <section class:list={["formacion__cards", "centrar"]}>
             </section>
         </article>
 
