@@ -3,6 +3,7 @@ import BaseLayout from "@src/layouts/BaseLayout.astro";
 import Menu from "@src/components/Menu.astro";
 import CardSkill from "@src/components/CardSkill.astro";
 import CardHobbie from "@src/components/CardHobbie.astro";
+import CardFormacion from "@src/components/CardFormacion.astro";
 
 import botonLista from "../assets/header/lista.png";
 import perfil from "../assets/mis_datos/perfil.png";
@@ -12,6 +13,9 @@ import logoJs from "../assets/skills/Logo_js.svg";
 import logoTs from "../assets/skills/Logo_ts.svg";
 import orquesta from "../assets/hobbies/orquesta1.jpeg";
 import posterAkira from "../assets/hobbies/Akira.jpg";
+import formacion1 from "../assets/formacion/formacion_1.png";
+import formacion2 from "../assets/formacion/formacion_2.png";
+import formacion3 from "../assets/formacion/formacion_3.png";
 
 import "@src/styles/header.css"
 import "@src/styles/main.css"
@@ -187,6 +191,33 @@ import "@src/styles/formacion.css"
         <article class:list={["formacion"]}>
             <h2 class:list={["formacion__titulo", "centrar"]}>Formación</h2>
             <section class:list={["formacion__cards", "centrar"]}>
+                <CardFormacion
+                    imagen={{
+                      src: formacion1.src,
+                      alt: "Formación uno"
+                    }}
+                    titulo="Analisis de datos"
+                    texto="2019 - Alura"
+                />
+
+                <CardFormacion
+                    imagen={{
+                      src: formacion2.src,
+                      alt: "Formación dos"
+                    }}
+                    titulo="Formación UX Desgin"
+                    texto="2019 - Alura"
+                />
+
+                <CardFormacion
+                    imagen={{
+                      src: formacion3.src,
+                      alt: "Formación tres"
+                    }}
+                    titulo="Titulo"
+                    texto="2019 - alura"
+                />
+
             </section>
         </article>
 

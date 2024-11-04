@@ -1,5 +1,39 @@
+.formacion {
+  /* background-color: #eaf2fd; */
+  padding-block: 40px;
+
+  @media (width <= 768px) {
+    padding-block: 32px;
+  }
+}
+
 .formacion__titulo {
   inline-size: fit-content;
   margin-inline: auto;
+  /* margin-block-end: 32px; */
   color: white;
+
+  @media (width <= 768px) {
+    margin-block-start: 0;
+  }
+}
+
+.formacion__cards {
+  display: flex;
+  /* flex-flow: wrap; */
+  justify-content: space-between;
+  gap: 8px;
+
+  @media (width <= 700px) {
+    flex-flow: wrap;
+  }
+
+  @media (width <= 519px) {
+    justify-content: center;
+  }
+
+  @media (width <= 360px) {
+    flex-flow: wrap;
+    justify-content: center;
+  }
 }
