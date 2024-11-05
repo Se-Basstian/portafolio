@@ -4,6 +4,7 @@ import Menu from "@src/components/Menu.astro";
 import CardSkill from "@src/components/CardSkill.astro";
 import CardHobbie from "@src/components/CardHobbie.astro";
 import CardFormacion from "@src/components/CardFormacion.astro";
+import SeccionExp from "@src/components/SeccionExp.astro";
 
 import botonLista from "../assets/header/lista.png";
 import perfil from "../assets/mis_datos/perfil.png";
@@ -16,12 +17,15 @@ import posterAkira from "../assets/hobbies/Akira.jpg";
 import formacion1 from "../assets/formacion/formacion_1.png";
 import formacion2 from "../assets/formacion/formacion_2.png";
 import formacion3 from "../assets/formacion/formacion_3.png";
+import encriptador from "../assets/experiencia/Encriptador.png";
+import rectangle from "../assets/experiencia/Rectangle.png";
 
 import "@src/styles/header.css"
 import "@src/styles/main.css"
 import "@src/styles/skills.css"
 import "@src/styles/hobbies.css"
 import "@src/styles/formacion.css"
+import "@src/styles/experiencia.css"
 ---
 
 <BaseLayout
@@ -57,10 +61,10 @@ import "@src/styles/formacion.css"
                 </h2>
                 <p class="mis-datos__texto">
                 Me formé en SENATI (Servio Nacional de Adiestramiento en
-                Trabajo Indutrial) en la carrera técnica de Soporte y
-                Mantenimeinto de Equipos de Computación y actualmente
+                Trabajo Industrial) en la carrera técnica de Soporte y
+                Mantenimiento de Equipos de Computación y actualmente
                 estoy participando del proyecto Oracle ONE en Alura
-                Latam para empezar mi carrer como un desarrollador
+                Latam para empezar mi carrera como un desarrollador
                 Front-End
                 </p>
                 <ul class="mis-redes">
@@ -89,7 +93,7 @@ import "@src/styles/formacion.css"
                     Sobre mi
                 </h3>
                 <p class:list={["mis-datos__sobre-mi__texto", "centrar"]}>
-                    Soy una persona apasionda por la tecnología y curiosa
+                    Soy una persona apasionada por la tecnología y curiosa
                     por entender su funcionamiento. Es por ello que siempre
                     busco conocimientos en cursos, redes o libros; lo que me
                     llevó a comprender aspectos básicos de diversos
@@ -219,6 +223,30 @@ import "@src/styles/formacion.css"
                 />
 
             </section>
+        </article>
+
+        <article class:list={["exp"]}>
+            <h2 class="exp__titulo centrar">Experiencia</h2>
+            <SeccionExp
+                imagen={{
+                  src: encriptador.src,
+                  alt: "Encriptador"
+                }}
+                titulo="Encriptador de Texto"
+                texto="Challenge Alura Codificador"
+                voltear="row-reverse"
+            />
+
+            <SeccionExp
+                imagen={{
+                  src: rectangle.src,
+                  alt: "Otra imagen"
+                }}
+                titulo="Encriptador de texto 2"
+                texto="Challenge Alura Codificador"
+                voltear="row"
+            />
+
         </article>
 
     </main>

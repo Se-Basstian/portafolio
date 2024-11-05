@@ -1,0 +1,9 @@
+.exp {
+  background-color: #bbb;
+  padding-block: 16px;
+}
+
+.exp__titulo {
+  inline-size: fit-content;
+  margin-inline: auto;
+}
