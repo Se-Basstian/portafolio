@@ -5,6 +5,7 @@ import CardSkill from "@src/components/CardSkill.astro";
 import CardHobbie from "@src/components/CardHobbie.astro";
 import CardFormacion from "@src/components/CardFormacion.astro";
 import SeccionExp from "@src/components/SeccionExp.astro";
+import Formulario from "@src/components/Formulario.astro";
 
 import botonLista from "../assets/header/lista.png";
 import perfil from "../assets/mis_datos/perfil.png";
@@ -19,6 +20,7 @@ import formacion2 from "../assets/formacion/formacion_2.png";
 import formacion3 from "../assets/formacion/formacion_3.png";
 import encriptador from "../assets/experiencia/Encriptador.png";
 import rectangle from "../assets/experiencia/Rectangle.png";
+import telefono from "../assets/contacto/Telefono.png";
 
 import "@src/styles/header.css"
 import "@src/styles/main.css"
@@ -26,6 +28,7 @@ import "@src/styles/skills.css"
 import "@src/styles/hobbies.css"
 import "@src/styles/formacion.css"
 import "@src/styles/experiencia.css"
+import "src/styles/contacto.css"
 ---
 
 <BaseLayout
@@ -249,5 +252,15 @@ import "@src/styles/experiencia.css"
 
         </article>
 
+        <article class="contacto">
+            <div class="centrar">
+                <img
+                    class="contacto__img"
+                    src={telefono.src}
+                    alt="Teléfono negro"
+                />
+                <Formulario/>
+            </div>
+        </article>
     </main>
 </BaseLayout>

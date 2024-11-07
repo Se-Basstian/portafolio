@@ -1,0 +1,29 @@
+.contacto {
+  background-color: #eaf2fd;
+  padding-block: 129px;
+
+  div {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    inline-size: 100%;
+    padding: 0;
+  }
+
+  @media (width <= 768px) {
+    padding-block: 32px;
+  }
+
+  @media (width <= 360px) {
+    inline-size: 100%;
+    padding-inline: 16px;
+  }
+}
+
+.contacto__img {
+  inline-size: 464px;
+
+  @media (width <= 768px) {
+    display: none;
+  }
+}
