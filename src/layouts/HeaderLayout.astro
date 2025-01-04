@@ -1,0 +1,48 @@
+---
+import NavBar from "@src/components/NavBar.astro"
+---
+<header>
+    <section>
+        <div></div>
+        <NavBar/>
+    </section>
+
+    <slot/>
+</header>
+
+<style>
+    header {
+        inline-size: 100%;
+    }
+
+    section {
+        inline-size: 100%;
+        block-size: 83px;
+        padding-inline: 30px;
+        margin-inline: auto;
+
+        background-color:rgb(240, 240, 240) ;
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    div {
+        inline-size: 20px;
+        aspect-ratio: 1 / 1;
+        border-radius: 100px;
+
+        background-image: linear-gradient(
+            90deg,
+            rgb(48, 155, 244) 5%,
+            rgb(147, 89, 226) 70%
+        );
+    }
+
+</style>

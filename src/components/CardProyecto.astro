@@ -1,0 +1,61 @@
+---
+import Button from './Button.astro'
+
+interface Props {
+  titulo?: string
+  descripcion?: string
+}
+
+const {titulo="Título" , descripcion="Descripción"} = Astro.props
+---
+
+<div>
+    <h3>{titulo}</h3>
+    <p>{descripcion}</p>
+    <Button isProyect texto="Explorar Proyecto"/>
+</div>
+
+<style>
+    div {
+        inline-size: 350px;
+        block-size: 584px;
+        padding: 31px;
+        background-color: white;
+        border-radius: 16px;
+
+        display: flex;
+        flex-flow: column;
+        justify-content: flex-start;
+        align-items: center;
+        row-gap: 16px;
+
+        @media (width <= 440px) {
+            inline-size: 245px;
+            block-size: 400px;
+        }
+    }
+
+    h3 {
+        inline-size: 100%;
+        max-block-size: 154px;
+        font-size: 3.2rem;
+        font-weight: 600;
+        color: rgb(48, 155, 244);
+
+        @media (width <= 440px) {
+            font-size: 2.4rem;
+        }
+    }
+
+    p {
+        font-size: 2rem;
+        inline-size: 100%;
+        max-block-size: 264px;
+
+        @media (width <= 440px) {
+            font-size: 1.6rem;
+        }
+    }
+
+
+</style>

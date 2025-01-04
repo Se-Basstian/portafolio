@@ -1,0 +1,156 @@
+---
+---
+<script>
+
+const menuHamburguesa = document.querySelector(
+  ".menuHamburguesa",
+) as HTMLElement | null;
+
+const menuNav = document.querySelector(
+ ".contenedorMenu",
+) as HTMLElement | null;
+
+const menuCerrar = document.querySelector(
+  ".menuCerrar",
+) as HTMLElement | null;
+
+const links = document.querySelectorAll("a");
+
+
+if (
+  menuHamburguesa &&
+  menuNav &&
+  menuCerrar
+) {
+
+  menuHamburguesa.addEventListener("click", () => {
+    menuNav.classList.toggle("mostrarMenu");
+    menuHamburguesa.style.display = "none";
+    menuCerrar.style.display = "block";
+  });
+
+
+  menuCerrar.addEventListener("click", () => {
+    menuNav.classList.toggle("mostrarMenu");
+    menuHamburguesa.style.display = "block";
+    menuCerrar.style.display = "none";
+  });
+
+
+  if (links.length !== 0) {
+    links.forEach((link) => {
+        link.addEventListener("click",() => {
+          menuNav.classList.toggle("mostrarMenu");
+          menuHamburguesa.style.display = "block";
+          menuCerrar.style.display = "none";
+        });
+    });
+  }
+
+}
+
+</script>
+
+<nav class="contenedorMenu">
+    <ul>
+        <li><a href="#sobre mi">Sobre mí</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#contactame">Contacto</a></li>
+    </ul>
+</nav>
+<svg
+    class="menuHamburguesa"
+    xmlns="http://www.w3.org/2000/svg"
+    height="40px" viewBox="0 -960 960 960"
+    width="40px"
+    fill="#000000"
+    >
+    <path d="M120-120v-66.67h720V-120H120Zm0-326.67v-66.66h720v66.66H120Zm0-326.66V-840h720v66.67H120Z"/>
+</svg>
+
+<svg
+    class="menuCerrar"
+    xmlns="http://www.w3.org/2000/svg"
+    height="40px" viewBox="0 -960 960 960"
+    width="40px"
+    fill="#000000"
+    >
+    <path d="m251.33-204.67-46.66-46.66L433.33-480 204.67-708.67l46.66-46.66L480-526.67l228.67-228.66 46.66 46.66L526.67-480l228.66 228.67-46.66 46.66L480-433.33 251.33-204.67Z"/>
+</svg>
+
+
+<style>
+nav {
+    max-inline-size: 1400px;
+    display: flex;
+    transition: right 0.5s linear;
+
+    @media (width <= 630px) {
+        position: absolute;
+        top: 83px;
+        right: 100%;
+        background-image: linear-gradient(
+            38deg,
+            rgb(48, 155, 244) 5%,
+            rgb(147, 89, 226) 70%
+        );
+        inline-size: 90%;
+        block-size: calc(100vh - 83px);
+    }
+}
+
+.mostrarMenu {
+    right: 10%;
+}
+
+ul {
+    list-style-type: none;
+    inline-size: 426px;
+    block-size: 39px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (width <= 630px) {
+        inline-size: 100%;
+        block-size: 100%;
+        flex-flow: column;
+        justify-content: space-evenly;
+    }
+}
+
+li {
+    @media (width <= 630px){
+        padding-inline: 30px;
+        border-radius: 15px;
+    }
+}
+
+
+a {
+    text-decoration: none;
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: black;
+
+    @media (width <=630px) {
+        color: white;
+        text-decoration: underline;
+        font-size: 3rem;
+    }
+}
+
+.menuHamburguesa {
+    display: none;
+
+    @media (width <= 630px) {
+        display: block;
+    }
+}
+
+.menuCerrar {
+    display:none;
+}
+
+</style>

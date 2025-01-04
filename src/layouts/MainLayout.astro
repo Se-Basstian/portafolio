@@ -1,0 +1,21 @@
+---
+import MisProyectos from "./MisProyectos.astro"
+import Contactame from "@src/components/Contactame.astro"
+---
+<main>
+    <MisProyectos/>
+    <Contactame/>
+</main>
+
+<style>
+    main {
+        inline-size: calc(100% - (2 * 30px));
+        padding-block: 32px 96px;
+        padding-inline: 30px;
+
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        row-gap: 64px;
+    }
+</style>

@@ -1,0 +1,67 @@
+---
+import Button from "./Button.astro"
+---
+
+<article id="contactame">
+    <h2>Contáctame</h2>
+    <p>
+        ¿Necesitas un página para tu negocio? ¿Tienes un equipo de desarrollo
+        web y te falta personar?
+        Pues no dudes en contactarme.
+    </p>
+
+    <Button texto="Enviar un Correo" />
+</article>
+
+<style>
+    article {
+        inline-size: 80%;
+        min-block-size: 300px;
+        background-color: white;
+        border-radius: 16px;
+        padding:73px 32px ;
+
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (width <= 760px) {
+            padding-block: 32px;
+            gap: 16px;
+        }
+
+        @media (width <= 440px) {
+            inline-size: 95%;
+            padding: 16px;
+        }
+    }
+
+    h2 {
+        inline-size: fit-content;
+        block-size: 64px;
+        font-size: 4rem;
+        display: flex;
+        align-items: center;
+
+        @media (width <= 440px) {
+            font-size: 3.2rem;
+        }
+    }
+
+    p {
+        inline-size: 80%;
+        font-size: 2.4rem;
+        line-height: 2;
+        text-align: center;
+
+        @media (width <= 760px) {
+            inline-size: 95%;
+            line-height: 1.5;
+        }
+
+        @media (width <= 440px) {
+            font-size: 1.6rem;
+        }
+    }
+</style>

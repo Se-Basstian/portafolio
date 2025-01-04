@@ -1,0 +1,75 @@
+---
+interface Props {
+  perfil: string
+}
+
+const {perfil} = Astro.props
+---
+<section id="sobre mi">
+    <h2>Sobre mí</h2>
+    <img src={perfil} alt="Foto de perfil">
+    <p>
+        ¡Hola! Soy Sebastian, desarrollador fron-end. Me apaciona aprender
+        las nuevas tecnologías y ponerlas en práctica.
+    </p>
+</section>
+
+<style>
+    section {
+        inline-size: 100%;
+        min-block-size: 596px;
+        background-image: linear-gradient(
+            90deg,
+            rgb(48, 155, 244) 5%,
+            rgb(147, 89, 226) 70%
+        );
+
+        border-radius: 0 0 32px 32px;
+
+        display: flex;
+        flex-flow: column;
+        justify-content: space-evenly;
+        align-items: center;
+
+        @media (width <= 440px) {
+            min-block-size: 480px;
+            border-radius: 0 0 20px 20px;
+        }
+    }
+
+    h2 {
+        font-size: 5.6rem;
+        color: white;
+
+        @media (width <= 440px) {
+            font-size: 3.2rem;
+        }
+    }
+
+    img {
+        inline-size: 200px;
+        aspect-ratio: 1 / 1;
+        background-color: gainsboro;
+        border: 2px solid white;
+        border-radius: 100px;
+
+        @media (width <= 440px) {
+            inline-size: 150px;
+        }
+    }
+
+    p{
+        max-inline-size: 739px;
+        color: white;
+        font-size: 2.4rem;
+
+        @media (width <= 760px) {
+            max-inline-size: 85%;
+            text-align: center;
+        }
+
+        @media ( widht <= 440px) {
+            font-size: 1.6rem;
+        }
+    }
+</style>

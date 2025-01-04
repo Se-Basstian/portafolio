@@ -1,0 +1,41 @@
+---
+import CardProyecto from "@src/components/CardProyecto.astro"
+---
+
+<article id="proyectos">
+    <h2>Mis Proyectos</h2>
+    <section>
+        <CardProyecto/>
+        <CardProyecto/>
+        <CardProyecto/>
+    </section>
+</article>
+
+<style>
+    article {
+        max-inline-size: 1400px;
+    }
+
+    h2 {
+        font-size: 4rem;
+        inline-size: fit-content;
+        block-size: 64px;
+        margin-inline: auto;
+        display: flex;
+        align-items: center;
+
+        @media (width <= 440px) {
+            font-size: 3.2rem;
+        }
+    }
+
+    section {
+        inline-size: 100%;
+        margin-block-start: 32px;
+
+        display: flex;
+        justify-content: space-evenly;
+        flex-flow: wrap;
+        gap: 16px;
+    }
+</style>

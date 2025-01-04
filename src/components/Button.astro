@@ -1,0 +1,57 @@
+---
+interface Props {
+  texto?: string;
+  isProyect?: boolean;
+  isForm?: boolean
+}
+
+const {
+  texto="Sin texto",
+  isProyect=false,
+  isForm=false
+} = Astro.props
+---
+
+<button
+    class:list={[
+      {proyecto: isProyect},
+      {formulario: isForm}
+    ]}
+>
+{texto}
+</button>
+
+<script>
+  const botonProyecto = document.querySelector(
+    ".proyecto",
+  ) as HTMLButtonElement | null;
+
+  if (botonProyecto) {
+    console.log(botonProyecto.textContent);
+  }
+</script>
+
+<style>
+    button {
+        max-inline-size: 279px;
+        inline-size: 100%;
+        block-size: 63px;
+        border-radius: 8px;
+
+        background-image: linear-gradient(
+            90deg,
+            rgb(48, 155, 244) 5%,
+            rgb(147, 89, 226) 70%
+        );
+
+        font-size: 2.4rem;
+        font-weight: 400;
+        color: white;
+
+        @media (width <= 440px) {
+            font-size: 2rem;
+            max-inline-size: 252px;
+            block-size: 56px;
+        }
+    }
+</style>
