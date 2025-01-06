@@ -4,14 +4,16 @@ import Button from './Button.astro'
 interface Props {
   titulo?: string
   descripcion?: string;
-  link?: string;
+  repositorio?: string;
+  demo?: string;
   img?: string
 }
 
 const {
   titulo="Título",
   descripcion="Descripción",
-  link,
+  repositorio,
+  demo,
   img
 } = Astro.props
 ---
@@ -20,7 +22,8 @@ const {
     <h3>{titulo}</h3>
     <img src={img} alt="imagen del proyecto">
     <p>{descripcion}</p>
-    <Button enlace={link}  texto="Explorar Proyecto"/>
+    <Button enlace={repositorio}  texto="Ver repositorio"/>
+    <Button enlace={demo} texto='Ver demo' />
 </div>
 
 <style>

@@ -7,7 +7,7 @@ const {idName} = Astro.props
 ---
 
 <div class="contiene-textarea">
-    <textarea name={idName} id={idName}/>
+    <textarea required name={idName} id={idName}/>
     <label  for={idName}>{idName}</label>
 </div>
 
@@ -69,7 +69,7 @@ const {idName} = Astro.props
            background-color: white;
            font-weight: 550;
            padding-inline: 8px;
-           border-radius: 10px;
+           border-radius: 10px 10px 0 0;
        }
     }
 
@@ -83,6 +83,10 @@ const {idName} = Astro.props
         font-size: 1.9rem;
 
         transition: all 0.15s linear;
+
+        @media (width <= 370px) {
+            font-size: 1.6rem;
+        }
     }
 
     .con-contenido {
@@ -93,6 +97,6 @@ const {idName} = Astro.props
         background-color: white;
         font-weight: 550;
         padding-inline: 8px;
-        border-radius: 10px;
+        border-radius: 10px 10px 0 0;
     }
 </style>

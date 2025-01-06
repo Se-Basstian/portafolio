@@ -7,7 +7,7 @@ const {idName} = Astro.props
 ---
 
 <div class="contiene-inputs">
-    <input name={idName} id={idName} type="text">
+    <input required name={idName} id={idName} type="text">
     <label for={idName}>{idName}</label>
 </div>
 
@@ -43,6 +43,7 @@ const {idName} = Astro.props
     div {
         position: relative;
         inline-size: 100%;
+
     }
 
     input {
@@ -61,26 +62,37 @@ const {idName} = Astro.props
         }
 
         &:focus + label {
-            top: -20px;
+            top: -19px;
             left: 2px;
 
             color: #2A7AE4;
             background-color: white;
             font-weight: 550;
             padding-inline: 8px;
-            border-radius: 10px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        @media (width <= 370px) {
+            block-size: 40px;
+            font-size: 1.6rem;
         }
     }
 
     label {
         position: absolute;
-        top: 15px;
+        top: 12px;
         left: 10px;
 
         font-size: 1.9rem;
         color: #A2A2A2;
 
         transition: all 0.15s linear;
+
+        @media (width <= 370px) {
+            top: 12px;
+            left: 9px;
+            font-size: 1.6rem;
+        }
     }
 
     .conContenido {
@@ -92,6 +104,13 @@ const {idName} = Astro.props
         font-weight: 550;
         padding-inline: 8px;
         border-radius: 10px;
+
+        @media (width <= 370px) {
+            top: -19px;
+            left: 2px;
+
+            border-radius: 10px 10px 0 0;
+        }
     }
 
 </style>
