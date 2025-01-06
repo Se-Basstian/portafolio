@@ -1,0 +1,97 @@
+---
+interface Props {
+  idName:string
+}
+
+const {idName} = Astro.props
+---
+
+<div class="contiene-inputs">
+    <input name={idName} id={idName} type="text">
+    <label for={idName}>{idName}</label>
+</div>
+
+<script>
+  const contienInputs = document.querySelectorAll(".contiene-inputs");
+
+  for (const contiene of contienInputs) {
+
+    const input = contiene.querySelector(
+      "input",
+    ) as HTMLInputElement;
+
+    const label = contiene.querySelector(
+      "label",
+    ) as HTMLLabelElement;
+
+
+    input.addEventListener("blur", () => {
+
+      if (input.value !== "") {
+        label.classList.add("conContenido");
+      } else {
+        label.classList.remove("conContenido");
+      }
+
+    })
+  }
+
+
+</script>
+
+<style>
+    div {
+        position: relative;
+        inline-size: 100%;
+    }
+
+    input {
+        inline-size: calc(100% - 20px);
+        block-size: 50px;
+        padding-inline: 10px;
+
+        outline: none;
+        border-radius: 6px 6px 0 0;
+
+        font-size: 1.9rem;
+
+        &:focus {
+            block-size: 46px;
+            border-bottom: 4px solid #2A7AE4;
+        }
+
+        &:focus + label {
+            top: -20px;
+            left: 2px;
+
+            color: #2A7AE4;
+            background-color: white;
+            font-weight: 550;
+            padding-inline: 8px;
+            border-radius: 10px;
+        }
+    }
+
+    label {
+        position: absolute;
+        top: 15px;
+        left: 10px;
+
+        font-size: 1.9rem;
+        color: #A2A2A2;
+
+        transition: all 0.15s linear;
+    }
+
+    .conContenido {
+        top: -20px;
+        left: 2px;
+
+        color: #2A7AE4;
+        background-color: white;
+        font-weight: 550;
+        padding-inline: 8px;
+        border-radius: 10px;
+    }
+
+</style>

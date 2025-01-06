@@ -1,12 +1,30 @@
 ---
-import CardProyecto from "@src/components/CardProyecto.astro"
+import CardProyecto from "@src/components/CardProyecto.astro";
+
+import imagenEncriptador from "@src/images/experiencia/Encriptador.png";
+import imagenOrg from "@src/images/experiencia/Organizador.png";
 ---
 
 <article id="proyectos">
     <h2>Mis Proyectos</h2>
     <section>
-        <CardProyecto/>
-        <CardProyecto/>
+        <CardProyecto
+            titulo="Encriptador de texto"
+            descripcion={`
+              Esta aplicación web permite a los usuarios encriptar
+              y desencriptar texto de manera fácil y rápida. Es
+              ideal para proteger mensajes o datos sensibles.
+            `}
+            link="https://github.com/Se-Basstian/encriptador-de-texto"
+            img={imagenEncriptador.src}
+        />
+        <CardProyecto
+            titulo="Organizador"
+            descripcion={`
+              Un lugar donde puedes organizar a tus equipos como desees.
+            `}
+            img={imagenOrg.src}
+        />
         <CardProyecto/>
     </section>
 </article>

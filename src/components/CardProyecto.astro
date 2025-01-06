@@ -3,16 +3,24 @@ import Button from './Button.astro'
 
 interface Props {
   titulo?: string
-  descripcion?: string
+  descripcion?: string;
+  link?: string;
+  img?: string
 }
 
-const {titulo="Título" , descripcion="Descripción"} = Astro.props
+const {
+  titulo="Título",
+  descripcion="Descripción",
+  link,
+  img
+} = Astro.props
 ---
 
 <div>
     <h3>{titulo}</h3>
+    <img src={img} alt="imagen del proyecto">
     <p>{descripcion}</p>
-    <Button isProyect texto="Explorar Proyecto"/>
+    <Button enlace={link}  texto="Explorar Proyecto"/>
 </div>
 
 <style>
@@ -47,10 +55,14 @@ const {titulo="Título" , descripcion="Descripción"} = Astro.props
         }
     }
 
+    img {
+        inline-size: 100%;
+    }
+
     p {
         font-size: 2rem;
         inline-size: 100%;
-        max-block-size: 264px;
+        /* max-block-size: 264px; */
 
         @media (width <= 440px) {
             font-size: 1.6rem;

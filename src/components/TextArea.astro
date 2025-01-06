@@ -1,0 +1,98 @@
+---
+interface Props {
+  idName: string
+}
+
+const {idName} = Astro.props
+---
+
+<div class="contiene-textarea">
+    <textarea name={idName} id={idName}/>
+    <label  for={idName}>{idName}</label>
+</div>
+
+<script>
+
+  const contieneTextArea = document.querySelectorAll(".contiene-textarea");
+
+  for (const contiene of contieneTextArea) {
+
+    const textarea = contiene.querySelector(
+      "textarea",
+    ) as HTMLTextAreaElement;
+
+    const label = contiene.querySelector(
+      "label",
+    ) as HTMLLabelElement;
+
+    textarea.addEventListener("blur", () => {
+
+      if (textarea.value !== "") {
+        label.classList.add("con-contenido");
+      } else {
+        label.classList.remove("con-contenido");
+      }
+
+    })
+
+  }
+
+</script>
+
+<style>
+    div {
+        inline-size: 100%;
+        position: relative;
+    }
+
+    textarea {
+       inline-size: calc(100% - 20px);
+       block-size: 133px;
+       border-radius: 6px 6px 0 0;
+       padding: 10px;
+
+       outline: none;
+       resize: none;
+
+       font-size: 1.9rem;
+
+       &:focus {
+           block-size: 129px;
+           border-bottom: 4px solid #2A7AE4;
+       }
+
+       &:focus + label {
+           top: -20px;
+           left: 2px;
+
+           color: #2A7AE4;
+           background-color: white;
+           font-weight: 550;
+           padding-inline: 8px;
+           border-radius: 10px;
+       }
+    }
+
+    label {
+        position: absolute;
+        top: 15px;
+        left: 10px;
+
+        font-size: 1.9rem;
+        color: #A2A2A2;
+        font-size: 1.9rem;
+
+        transition: all 0.15s linear;
+    }
+
+    .con-contenido {
+        top: -20px;
+        left: 2px;
+
+        color: #2A7AE4;
+        background-color: white;
+        font-weight: 550;
+        padding-inline: 8px;
+        border-radius: 10px;
+    }
+</style>

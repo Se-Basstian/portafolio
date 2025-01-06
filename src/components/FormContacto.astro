@@ -1,0 +1,89 @@
+---
+import Input from "./Input.astro";
+import TextArea from "./TextArea.astro";
+import imgTelefono from "../images/contacto/Telefono.png";
+---
+
+<article>
+    <img src={imgTelefono.src} alt="Un telfono antigüo">
+    <section>
+        <h2>Contacto</h2>
+        <p>
+        ¿Quieres contactarme?<br>
+        Completa el siguiente formulario y me podré en contacto con usted lo antes posibles.
+        </p>
+
+        <form>
+            <Input idName="Nombre" />
+            <Input idName="Correo" />
+            <Input idName="Asunto" />
+            <TextArea idName="Mensaje"/>
+
+            <button
+                type="submit"
+            >Enviar mensaje
+            </button>
+        </form>
+    </section>
+</article>
+
+<style>
+    article {
+        inline-size: 1030px;
+        block-size: 660px;
+        padding: 20px;
+        margin-inline: auto;
+
+        background-image: linear-gradient(
+            90deg,
+            rgb(48, 155, 244) 5%,
+            rgb(147, 89, 226) 70%
+        );
+
+        display: flex;
+    }
+
+    img {
+        inline-size: 50%;
+    }
+
+    section {
+        inline-size: calc(50% - 30px);
+        block-size: calc(100% 30px);
+
+       padding: 15px;
+    }
+
+    h2, p {
+        color: white;
+    }
+
+    h2 {
+        font-size: 3.2rem;
+    }
+
+    p {
+        font-size: 1.9rem;
+        line-height: 1.3;
+    }
+
+    form {
+        margin-block-start: 25px;
+        inline-size: 100%;
+
+        display: flex;
+        flex-flow: column;
+        gap: 28px;
+    }
+
+    button {
+        inline-size: 144px;
+        block-size: 51px;
+        background-color: deepskyblue;
+        border: none;
+
+        color: white;
+        font-size: 1.9rem;
+
+    }
+</style>
