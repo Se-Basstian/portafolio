@@ -13,6 +13,7 @@
 
 html {
   padding-block-start: 83px;
+  scroll-behavior: smooth;
 }
 
 body {

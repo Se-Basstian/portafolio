@@ -1,0 +1,56 @@
+---
+import Skill from "@src/components/Skill.astro";
+import imgCSS from "@src/images/skills/Logo_css.svg";
+import imgJS from "@src/images/skills/Logo_js.svg";
+import imgTS from "@src/images/skills/Logo_ts.svg";
+
+interface skill{
+  nombre: string;
+  imagen: string;
+}
+
+const misSkills: skill[] = [
+  {nombre: "CSS", imagen: imgCSS.src},
+  {nombre: "JavaScript", imagen: imgJS.src},
+  {nombre: "TypeScript", imagen: imgTS.src}
+]
+---
+<article>
+    <h2>Skills</h2>
+    <section>
+        <Skill />
+        {
+          misSkills.map(miSkill => {
+            return <Skill titulo={miSkill.nombre} imagen={miSkill.imagen} />
+          })
+        }
+    </section>
+</article>
+
+
+<style>
+    article {
+        inline-size: 100%;
+        block-size: 275px;
+        margin-block-end: 60px;
+
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+
+    h2 {
+        inline-size: fit-content;
+        block-size: 64px;
+        font-size: 4rem;
+    }
+
+    section {
+        inline-size: 100%;
+        margin-block-start: 60px;
+
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+</style>

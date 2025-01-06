@@ -1,0 +1,39 @@
+---
+import skill1 from "../images/skills/Logo_html.svg"
+
+interface Props {
+  titulo?: string;
+  imagen?: string
+}
+
+const {titulo="HTML", imagen=skill1.src} = Astro.props
+---
+
+<div>
+    <img src={imagen} alt={titulo}>
+    <p>{titulo}</p>
+</div>
+
+<style>
+div {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+img {
+    inline-size: 100px;
+    aspect-ratio: 1 / 1;
+    padding: 20px;
+    border-radius: 100px;
+
+    background-color: white;
+}
+
+p {
+    font-size: 2.5rem;
+    font-weight: 550;
+    margin-block-start: 10px;
+}
+</style>
