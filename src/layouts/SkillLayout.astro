@@ -31,7 +31,7 @@ const misSkills: skill[] = [
 <style>
     article {
         inline-size: 100%;
-        block-size: 275px;
+        min-block-size: 275px;
         margin-block-end: 60px;
 
         display: flex;
@@ -43,6 +43,10 @@ const misSkills: skill[] = [
         inline-size: fit-content;
         block-size: 64px;
         font-size: 4rem;
+
+        @media (width <= 440px) {
+            font-size: 3.2rem;
+        }
     }
 
     section {
@@ -51,6 +55,7 @@ const misSkills: skill[] = [
 
         display: flex;
         justify-content: space-evenly;
-        flex-wrap: wrap;
+        flex-flow: wrap;
+        gap: 15px;
     }
 </style>
