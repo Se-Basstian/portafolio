@@ -3,6 +3,7 @@ import CardProyecto from "@src/components/CardProyecto.astro";
 
 import imagenEncriptador from "@src/images/experiencia/Encriptador.png";
 import imagenOrg from "@src/images/experiencia/Organizador.png";
+import imagenAluraFlix from "@src/images/experiencia/AluraFlix.png"
 ---
 
 <article id="proyectos">
@@ -15,7 +16,8 @@ import imagenOrg from "@src/images/experiencia/Organizador.png";
               y desencriptar texto de manera fácil y rápida. Es
               ideal para proteger mensajes o datos sensibles.
             `}
-            repositorio="https://github.com/Se-Basstian/encriptador-de-texto"
+            repositorio="https://github.com/Se-Basstian/Encriptador"
+            demo="https://encriptador-nine-psi.vercel.app/"
             img={imagenEncriptador.src}
         />
         <CardProyecto
@@ -26,6 +28,16 @@ import imagenOrg from "@src/images/experiencia/Organizador.png";
             repositorio="https://github.com/Se-Basstian/Org"
             demo="https://org-jet-three.vercel.app/"
             img={imagenOrg.src}
+        />
+        <CardProyecto
+            titulo="AluraFlix"
+            descripcion={`
+              Netfix pero que no es netflix. Aqui podras agregar y quitrar los videos de
+              programación de desees.
+            `}
+            img={imagenAluraFlix.src}
+            demo="https://alura-flix-seven-navy.vercel.app/"
+            repositorio="https://github.com/Se-Basstian/AluraFlix"
         />
     </section>
 </article>
